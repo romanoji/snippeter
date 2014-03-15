@@ -1,0 +1,7 @@
+== Snippeter
+
+Application for training purposes.
+
+* Ruby version: 2.1.1
+
+* Rails ver. 4.1.0.rc1
