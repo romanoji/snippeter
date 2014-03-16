@@ -1,0 +1,58 @@
+<div class="page-header">
+  <%= link_to new_snippet_path, :class => 'btn btn-add' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Snippet
+  <% end %>
+  <h1>Listing snippets</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Snippet</th>
+            <th>Lang</th>
+            <th>Description</th>
+            <th>Creation date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @snippets.each do |snippet| %>
+        <tr class="row-link" data-link=<%= snippet_path(snippet) %>>
+            <td><%= snippet.snippet %></td>
+            <td><%= snippet.lang %></td>
+            <td><%= snippet.description %></td>
+            <td><%= snippet.creation_date.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
+            <td class="centered">
+              <%= link_to edit_snippet_path(snippet), class: 'btn btn-edit fullsized' do %>
+                <span class="glyphicon glyphicon-pencil"></span>
+              <% end %>
+            </td>
+            <td class="centered">
+              <%= link_to snippet, method: :delete, data: { confirm: 'Do you really want to delete this snippet?' }, class: 'btn btn-remove fullsized' do %>
+                <span class="glyphicon glyphicon-remove"></span>
+              <% end %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // Make rows clickable
+    $(".table tr").on('click', function(event) {
+        var target = $(event.target);
+        if (target.is(":not(a)") && target.is(":not(span)")) {
+            var href = $(this).data("link");
+            if (href) {
+                window.location.href = href;
+            }
+        }
+    });
+});
+</script>

@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to snippets_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_snippet_path(@snippet), :class => 'btn btn-edit' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show snippet</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Lang:</dt>
+  <dd><%= @snippet.lang %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @snippet.description %></dd>
+
+  <dt>Creation date:</dt>
+  <dd><%= @snippet.creation_date.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></dd>
+
+  <dt>Snippet:</dt>
+  <dd><%= raw Pygments.highlight(@snippet.snippet, lexer: @snippet.lang.downcase) %></dd>
+
+</dl>
