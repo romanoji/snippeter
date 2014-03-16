@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+img {
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode: bicubic;
+}
+
+body {
+    font-size: 12pt !important;
+}
+
+pre {
+    font-size: 12pt !important;
+}

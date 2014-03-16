@@ -16,6 +16,12 @@ gem 'redcarpet', '3.1.1'
   gem 'bootstrap-sass', '~> 3.1.1'
 # Nice bootstrap generator
 gem 'bootstrap-generators', '~> 3.1.1'
+# Animation css
+gem 'animate-scss' # gem 'animate-rails'
+# Infinite scrolling
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+# gem 'infinitescrolling-rails' # gem 'will_paginate', '~> 3.0.5'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -31,14 +37,15 @@ group :development do
   #gem 'spring'
   # Quiet assets
   gem 'quiet_assets'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '1.3.9'
 end
 
-#group :production do
-#  gem 'pg', '0.15.1'
-#  gem 'rails_12factor', '0.0.2'
-#end
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3', '1.3.9', group: [:development, :test]
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

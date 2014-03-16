@@ -1,0 +1,15 @@
+@import 'animate';
+@import 'animate/bounce';
+
+.github-logo {
+    image-rendering: auto;
+    cursor: pointer;
+}
+
+.github-logo:hover {
+  @include animate(bounce, 1s);
+}
+
+.github-logo.bounce {
+  @include animate($speed: 2s);
+}

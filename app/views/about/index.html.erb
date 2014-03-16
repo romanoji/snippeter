@@ -1,4 +1,14 @@
 <div class="page-header">
-  <h1>About#index</h1>
+  <h1>ABOUT</h1>
 </div>
-<p>Find me in app/views/about/index.html.erb</p>
+<div class="jumbotron">
+      <%= raw Pygments.highlight('
+      {
+        "github_credentials": {
+            "nickname": "gruchanet",
+            "email": "rjozwiak.net@gmail.com"
+        }
+      }
+      ', lexer: 'json') %>
+    <p class="page-header">Find me on <%= image_tag 'github_ruby_mini.png', :class => 'github-logo', :alt => 'GitHub.com', :onclick => 'window.open("https://github.com/gruchanet")' %></p>
+</div>
