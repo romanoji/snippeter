@@ -15,12 +15,12 @@ class SnippetsController < ApplicationController
   # GET /snippets/new
   def new
     @snippet = Snippet.new
-    @buttonText = 'Add Snippet'
+    @submit_button_text = 'Add Snippet'
   end
 
   # GET /snippets/1/edit
   def edit
-    @buttonText = 'Update Snippet'
+    @submit_button_text = 'Update Snippet'
   end
 
   # POST /snippets

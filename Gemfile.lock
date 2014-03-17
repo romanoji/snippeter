@@ -31,6 +31,7 @@ GEM
       sass
     arel (5.0.0)
     atomic (1.1.15)
+    bcrypt (3.1.7)
     bootstrap-generators (3.1.1.1)
       railties (>= 3.1.0)
     bootstrap-sass (3.1.1.0)
@@ -138,6 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   animate-scss
+  bcrypt
   bootstrap-generators (~> 3.1.1)
   bootstrap-sass (~> 3.1.1)
   bootstrap-will_paginate (~> 0.0.10)

@@ -15,4 +15,8 @@
 /log/*.log
 /tmp
 
+/* Ignore .idea files
 /.idea/*
+
+/* Ignore temporary files
+*~

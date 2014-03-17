@@ -22,6 +22,8 @@ gem 'animate-scss' # gem 'animate-rails'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 # gem 'infinitescrolling-rails' # gem 'will_paginate', '~> 3.0.5'
+# Useful for crypting passwords
+gem 'bcrypt' #gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
