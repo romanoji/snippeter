@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20140318002002) do
     t.text     "snippet"
     t.string   "lang"
     t.string   "description"
-    t.datetime "creation_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
