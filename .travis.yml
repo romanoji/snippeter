@@ -1,8 +1,0 @@
-language: ruby
-rvm:
-  - 1.9.3
-  - 2.0.0
-gemfile: gemfiles/Gemfile.ci
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install python
