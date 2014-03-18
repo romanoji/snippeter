@@ -11,22 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318002002) do
+ActiveRecord::Schema.define(version: 20140318074105) do
 
   create_table "langs", force: true do |t|
-    t.string   "lang"
     t.string   "name"
+    t.string   "value"
+    t.integer  "order_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "snippets", force: true do |t|
     t.text     "snippet"
-    t.string   "lang"
+    t.integer  "lang_id"
     t.string   "description"
-    t.datetime "creation_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "snippets", ["lang_id"], name: "index_snippets_on_lang_id"
 
 end

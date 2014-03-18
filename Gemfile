@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 # Filters
 gem 'has_scope', '~> 0.5.1'
+# Combobox overlay
+gem 'select2-rails', '~> 3.5.4'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

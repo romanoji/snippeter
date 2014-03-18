@@ -4,7 +4,7 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.paginate(page: params[:page], per_page: 5).order('creation_date DESC')
+    @snippets = Snippet.paginate(page: params[:page], per_page: 5).order('created_at DESC')
   end
 
   # GET /snippets/1
@@ -27,13 +27,13 @@ class SnippetsController < ApplicationController
   # POST /snippets.json
   def create
     @snippet = Snippet.new(snippet_params)
-    @snippet.creation_date = DateTime.now
 
     respond_to do |format|
       if @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
         format.json { render action: 'show', status: :created, location: @snippet }
       else
+        @submit_button_text = 'Add Snippet'
         format.html { render action: 'new' }
         format.json { render json: @snippet.errors, status: :unprocessable_entity }
       end
@@ -48,6 +48,7 @@ class SnippetsController < ApplicationController
         format.html { redirect_to @snippet, notice: 'Snippet was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @snippet }
       else
+        @submit_button_text = 'Update Snippet'
         format.html { render action: 'edit' }
         format.json { render json: @snippet.errors, status: :unprocessable_entity }
       end
@@ -72,6 +73,6 @@ class SnippetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snippet_params
-      params.require(:snippet).permit(:snippet, :lang, :description)
+      params.require(:snippet).permit(:snippet, :lang_id, :description)
     end
 end
