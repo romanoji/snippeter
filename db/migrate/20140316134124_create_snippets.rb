@@ -4,7 +4,6 @@ class CreateSnippets < ActiveRecord::Migration
       t.text :snippet
       t.string :lang
       t.string :description
-      t.timestamp :creation_date
 
       t.timestamps
     end

@@ -20,7 +20,10 @@
   <dd><%= @snippet.description %></dd>
 
   <dt>Creation date:</dt>
-  <dd><%= @snippet.creation_date.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></dd>
+  <dd><%= @snippet.created_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></dd>
+
+  <dt>Last modification:</dt>
+  <dd><%= @snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></dd>
 
   <dt>Snippet:</dt>
   <dd><%= raw Pygments.highlight(@snippet.snippet, lexer: @snippet.lang.downcase) %></dd>

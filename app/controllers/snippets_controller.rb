@@ -4,7 +4,7 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.paginate(page: params[:page], per_page: 5).order('created_at DESC')
+    @snippets = Snippet.paginate(page: params[:page], per_page: 5).order('creation_date DESC')
   end
 
   # GET /snippets/1
@@ -72,6 +72,6 @@ class SnippetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snippet_params
-      params.require(:snippet).permit(:snippet, :lang, :description, :creation_date)
+      params.require(:snippet).permit(:snippet, :lang, :description)
     end
 end
