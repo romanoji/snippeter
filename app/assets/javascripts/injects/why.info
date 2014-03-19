@@ -1,0 +1,3 @@
+Turbolinks are caching files so they won't be loaded again.
+And thus, for example script "rows_clickable.js" are not invoked again
+and clicking on table rows are without effect.

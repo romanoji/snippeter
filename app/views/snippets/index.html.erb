@@ -1,5 +1,7 @@
 <% title 'Recent snippets' %>
 
+<%= javascript_include_tag "injects/rows_clickable", "data-turbolinks-track" => true %>
+
 <div class="page-header">
   <%= link_to new_snippet_path, :class => 'btn btn-add' do %>
     <span class="glyphicon glyphicon-plus"></span>
@@ -25,10 +27,10 @@
     <tbody>
       <% @snippets.each do |snippet| %>
         <tr class="row-link" data-link=<%= snippet_path(snippet) %>>
-            <td><%= snippet.snippet %></td>
+            <td width=""><%= snippet.snippet %></td>
             <td><%= snippet.lang.name %></td>
             <td><%= snippet.description %></td>
-            <td><%= snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
+            <td width=""><%= snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
             <td class="centered">
               <%= link_to edit_snippet_path(snippet), class: 'btn btn-edit fullsized' do %>
                 <span class="glyphicon glyphicon-pencil"></span>
@@ -48,21 +50,6 @@
 <div id="infinite-scrolling">
   <%= will_paginate %>
 </div>
-
-<script>
-$(document).ready(function() {
-    // Make rows clickable
-    $(".table tr").on('click', function(event) {
-        var target = $(event.target);
-        if (target.is(":not(a)") && target.is(":not(span)")) {
-            var href = $(this).data("link");
-            if (href) {
-                window.location.href = href;
-            }
-        }
-    });
-});
-</script>
 <% else %>
     <em>No snippets found.</em>
 <% end %>
