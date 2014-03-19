@@ -15,22 +15,22 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>Snippet</th>
-        <th>Lang</th>
-        <th>Description</th>
-        <th>Last modification</th>
-        <th></th>
-        <th></th>
+        <th style="">Snippet</th>
+        <th style="width: 100px;">Lang</th>
+        <th style="">Description</th>
+        <th style="width: 220px;">Last modification</th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @snippets.each do |snippet| %>
         <tr class="row-link" data-link=<%= snippet_path(snippet) %>>
-            <td width=""><%= snippet.snippet %></td>
+            <td class="snippet-notion"><%= snippet.snippet %></td>
             <td><%= snippet.lang.name %></td>
             <td><%= snippet.description %></td>
-            <td width=""><%= snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
+            <td><%= snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
             <td class="centered">
               <%= link_to edit_snippet_path(snippet), class: 'btn btn-edit fullsized' do %>
                 <span class="glyphicon glyphicon-pencil"></span>
