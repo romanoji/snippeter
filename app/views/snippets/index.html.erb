@@ -1,7 +1,5 @@
 <% title 'Recent snippets' %>
 
-<%= javascript_include_tag "injects/rows_clickable", "data-turbolinks-track" => true %>
-
 <div class="page-header">
   <%= link_to new_snippet_path, :class => 'btn btn-add' do %>
     <span class="glyphicon glyphicon-plus"></span>
@@ -50,6 +48,22 @@
 <div id="infinite-scrolling">
   <%= will_paginate %>
 </div>
+
+<%= javascript_tag do %>
+    $(document).ready(function() {
+        // Make rows clickable
+        $(".table tr").on('click', function(event) {
+            var target = $(event.target);
+            if (target.is(":not(a)") && target.is(":not(span)")) {
+                var href = $(this).data("link");
+                if (href) {
+                    window.location.href = href;
+                }
+            }
+        });
+    });
+<% end %>
+
 <% else %>
     <em>No snippets found.</em>
 <% end %>
