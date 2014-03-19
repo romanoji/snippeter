@@ -28,6 +28,10 @@ class SnippetsController < ApplicationController
   def create
     @snippet = Snippet.new(snippet_params)
 
+    if !lang_check(@snippet)
+      return false
+    end
+
     respond_to do |format|
       if @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
@@ -43,6 +47,10 @@ class SnippetsController < ApplicationController
   # PATCH/PUT /snippets/1
   # PATCH/PUT /snippets/1.json
   def update
+    if !lang_check(Snippet.new(snippet_params))
+      return false
+    end
+
     respond_to do |format|
       if @snippet.update(snippet_params)
         format.html { redirect_to @snippet, notice: 'Snippet was successfully updated.' }
@@ -69,6 +77,15 @@ class SnippetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_snippet
       @snippet = Snippet.find(params[:id])
+    end
+
+    # Auth snippet lang
+    def lang_check(snippet)
+      if !snippet.lang_id.nil? && !snippet.lang_id.blank? && !Lang.all.include?(snippet.lang)
+        redirect_to(snippets_path, alert: 'Trying to crash things won\'t lead you anywhere! =)') # flash[:alert]
+        return false
+      end
+      return true
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
