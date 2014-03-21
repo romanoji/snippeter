@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 langs = [
-           {name: 'None', value: '', order_type: 1}, # nil or''
+           {name: 'None', value: '', order_type: 1}, # nil or ''
            {name: n = 'C', value: n.downcase, order_type: 2},
            {name: n = 'C++', value: n.downcase, order_type: 2},
            {name: n = 'C#', value: n.downcase, order_type: 2},
@@ -149,7 +149,7 @@ langs = [
            {name: n = 'XML+PHP', value: n.downcase, order_type: 4},
            {name: n = 'XML+Ruby', value: n.downcase, order_type: 4},
            {name: n = 'XML+Smarty', value: n.downcase, order_type: 4},
-           {name: n = 'XML+Velocity', value: n.downcase, order_type: 4},
+           {name: n = 'XML+Velocity', value: n.downcase, order_type: 4}
         ]
 
 langs.each do |attr|
