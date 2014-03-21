@@ -8,27 +8,30 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-# Additional gems
+### Additional gems
+# Generic syntax highlighter
 gem 'pygments.rb', '0.5.4'
+# Markdown parser "Redcarpet is Ruby library for Markdown processing that smells like butterflies and popcorn."
 gem 'redcarpet', '3.1.1'
-  # Bootstrap + dependencies
-  gem 'sass-rails', '~> 4.0.1'
-  gem 'bootstrap-sass', '~> 3.1.1'
-# Nice bootstrap generator
+gem 'sass-rails', '~> 4.0.1'
+# Bootstrap - front-end framework
+gem 'bootstrap-sass', '~> 3.1.1'
+# Nice bootstrap template generator
 gem 'bootstrap-generators', '~> 3.1.1'
-# Animation css
+# CSS Animation
 gem 'animate-scss' # gem 'animate-rails'
-# Infinite scrolling
+# Paginator
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-# gem 'infinitescrolling-rails' # gem 'will_paginate', '~> 3.0.5'
+# Infinite scrolling
+# gem 'infinitescrolling-rails'
 # Useful for crypting passwords
-#gem 'bcrypt' #gem 'bcrypt-ruby', :require => 'bcrypt'
-# Filters
+# gem 'bcrypt' #gem 'bcrypt-ruby', :require => 'bcrypt'
+# Filter scopes
 gem 'has_scope', '~> 0.5.1'
 # Combobox overlay
 gem 'select2-rails', '~> 3.5.4'
-# Simple form
+# Simplier form syntax
 gem 'simple_form', '~> 3.0.1'
 
 # Use jquery as the JavaScript library

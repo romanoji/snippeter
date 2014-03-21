@@ -5,3 +5,68 @@ Application for training purposes.
 * Ruby version: 2.1.1
 
 * Rails ver. 4.1.0.rc1
+
+=== Gems
+* ==== Generic syntax highlighter
+    gem 'pygments.rb', '0.5.4'
+
+* ==== Markdown parser "Redcarpet is Ruby library for Markdown processing that smells like butterflies and popcorn."
+    gem 'redcarpet', '3.1.1'
+    gem 'sass-rails', '~> 4.0.1'
+
+* ==== Bootstrap - front-end framework
+    gem 'bootstrap-sass', '~> 3.1.1'
+
+* ==== Nice bootstrap template generator
+    gem 'bootstrap-generators', '~> 3.1.1'
+
+* ==== CSS Animation
+    gem 'animate-scss' # gem 'animate-rails'
+
+* ==== Paginator
+    gem 'will_paginate', '~> 3.0.5'
+    gem 'bootstrap-will_paginate', '~> 0.0.10'
+
+* ==== Filter scopes
+    gem 'has_scope', '~> 0.5.1'
+
+* ==== Combobox overlay
+    gem 'select2-rails', '~> 3.5.4'
+
+* ==== Simplier form syntax
+    gem 'simple_form', '~> 3.0.1'
+
+
+=== Features
+
+===== CORE FEATURE
+
+* <i>Coloful syntax</i> depending on chosen syntax
+
+===== Except standard features included in gems I added few additional features
+
+* <i>Clickable table rows</i>, which act as a link to certain <b>snippet</b>
+
+* <i>Possibility to input TAB character</i> in snippet form
+
+* <i>Secured combobox</i>
+
+* <i>Form validation</i>
+
+* <i>Dynamic page title</i>
+
+* <i>Fixed table layout with clipping snippet text</i>
+
+* <i>My buttons</i> :)
+
+==== FUTURE?
+
+* Searching snippets using filters
+
+* Combobox optgroups
+
+* Snippet tooltip popup/dropdown
+
+* Login system
+
+* ... ?
