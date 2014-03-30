@@ -2,7 +2,7 @@ jQuery(function() {
     var hash, loading_snippets, page_regexp, pushPage;
     page_regexp = /\d+$/;
     pushPage = function(page) {
-        History.pushState(null, "InfiniteScrolling | Page " + page, "?page=" + page);
+        History.pushState(null, "Snippeter App | Page " + page, "?page=" + page);
     };
     window.preparePagination = function(el) {
         el.waypoint(function(direction) {
