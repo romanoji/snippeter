@@ -172,8 +172,25 @@ pre, textarea {
   font-family: verdana, sans-serif;
 }
 
+.snippet-header, .snippet-notion {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.button-header {
+  width: 100px;
+  max-width: 100px;
+
+  @media (max-width: 767px) {
+    width: 50px;
+  }
+}
+
 .snippet-notion {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 300px;
+  max-width: 300px;
 }
