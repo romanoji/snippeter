@@ -1,0 +1,16 @@
+<tr class="row-link" data-link=<%= snippet_path(snippet) %>>
+  <td class="snippet-notion"><%= snippet.snippet %></td>
+  <td><%= snippet.lang.name %></td>
+  <td><%= snippet.description %></td>
+  <td><%= snippet.updated_at.in_time_zone('Warsaw').to_formatted_s(:rfc822) %></td>
+  <td class="centered">
+    <%= link_to edit_snippet_path(snippet), class: 'btn btn-edit fullsized' do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+  </td>
+  <td class="centered">
+    <%= link_to snippet, method: :delete, data: { confirm: 'Do you really want to delete this snippet?' }, class: 'btn btn-remove fullsized' do %>
+        <span class="glyphicon glyphicon-remove"></span>
+    <% end %>
+  </td>
+</tr>
