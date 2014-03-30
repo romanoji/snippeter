@@ -194,3 +194,12 @@ pre, textarea {
   width: 300px;
   max-width: 300px;
 }
+
+#static-pagination {
+  position: fixed;
+  top: 20px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}

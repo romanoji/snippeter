@@ -1,17 +1,15 @@
 <% title 'Recent snippets' %>
 
 <%= javascript_tag do %>
-    var ready = function() {
-        $('#snippets').append('<%= j render @snippets %>');
-        <% if @snippets.next_page %>
-            $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
-        <% else %>
-            $(window).off('scroll');
-            $('.pagination').remove();
-        <% end %>
-    }
-
-    $(document).ready(ready);
+    var delimiter =
+    $('<div class="page-delimiter" data-page="<%= params[:page] %>"></div>');
+    $('#snippets').append(delimiter);
+    $('#snippets').append('<%= j render @snippets %>');
+    $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
+    preparePagination(delimiter);
+    <% unless @snippets.next_page %>
+        $('#infinite-scrolling .pagination').remove();
+    <% end %>
 <% end %>
 
 <div class="page-header">
@@ -20,6 +18,10 @@
     New Snippet
   <% end %>
   <h1>Recent snippets</h1>
+</div>
+
+<div id="static-pagination">
+  <%= will_paginate %>
 </div>
 
 <% if @snippets.size > 0 %>
@@ -37,14 +39,17 @@
     </thead>
 
     <tbody id="snippets">
-      <% render @snippets %>
+        <div class="page-delimiter first-page" data-page="<%= params[:page] || 1 %>"></div>
+        <% render @snippets %>
     </tbody>
   </table>
 </div>
 
-<div id="infinite-scrolling">
-  <%= will_paginate %>
-</div>
+<% if @snippets.next_page %>
+    <div id="infinite-scrolling">
+      <%= will_paginate %>
+    </div>
+<% end %>
 
 <%= javascript_tag do %>
     $(document).ready(function() {
