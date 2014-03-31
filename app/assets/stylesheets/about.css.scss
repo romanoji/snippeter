@@ -13,3 +13,20 @@
 .github-logo.bounce {
   @include animate($speed: 2s);
 }
+
+#about-header {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .bottom-info {
+    font-size: 14pt !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 399px) {
+  .bottom-info {
+    font-size: 12pt !important;
+  }
+}

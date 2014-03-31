@@ -168,6 +168,10 @@ dd {
   max-width: 170px;
 }
 
+pre {
+  font-size: 12pt;
+}
+
 pre, textarea {
   font-family: verdana, sans-serif;
 }
@@ -176,6 +180,17 @@ pre, textarea {
   @media (max-width: 767px) {
     display: none;
   }
+}
+
+.lang-header, .lang-notion {
+  @media (max-width: 449px) {
+    display: none; // text-indent: -9999px;
+  }
+}
+
+.date-header {
+  width: 220px;
+  max-width: 220px;
 }
 
 .button-header {
@@ -191,15 +206,81 @@ pre, textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 300px;
-  max-width: 300px;
+  width: 250px;
+  max-width: 250px;
 }
 
 #static-pagination {
   position: fixed;
-  top: 20px;
+  top: -30px;
+  margin-left: 350px;
   opacity: 0.7;
   &:hover {
-    opacity: 1;
+    opacity: 0.8;
+  }
+  z-index: 1030;
+}
+
+@media (max-width: 767px) {
+  .pagination {
+    li {
+      a, span {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+  }
+  #static-pagination {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  #snippet-header {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 560px) {
+  th, td {
+    font-size: 10pt !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    li {
+      a, span {
+        padding: 4px 7px;
+        font-size: 11px;
+      }
+    }
+  }
+  #static-pagination {
+    top: -28px;
+    margin-left: 100px;
+  }
+
+  pre {
+    font-size: 10pt;
+  }
+}
+
+@media (max-width: 399px) {
+  #static-pagination {
+    display: none;
+  }
+
+  .btn-add {
+    margin-top: 30px;
+  }
+
+  #snippet-header {
+    font-size: 14pt;
+  }
+
+  pre {
+    font-size: 9pt;
   }
 }
