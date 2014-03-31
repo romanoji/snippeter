@@ -159,6 +159,12 @@ Snippet.create([
                    {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/pd_recursive.c').to_s, lang: Lang.find_by(name: 'C'), description: 'Dynamic programming - LCS Algorithm (recursive version)'},
                    {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/simple_join.sql').to_s, lang: Lang.find_by(name: 'SQL'), description: 'SQL Inner Join example'},
                    {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/b_tree.c').to_s, lang: Lang.find_by(name: 'C'), description: 'B-Tree snippet'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/EncryptUtils.java').to_s, lang: Lang.find_by(name: 'Java'), description: 'EncryptUtils'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/Connect.php').to_s, lang: Lang.find_by(name: 'PHP'), description: 'Connect singleton'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/fib_func.sh').to_s, lang: Lang.find_by(name: 'Shell'), description: 'Fibbonaci recursive_function in Shell'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/Polynomial.java').to_s, lang: Lang.find_by(name: 'Java'), description: 'Polynomial class'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/imported_db.xsd').to_s, lang: Lang.find_by(name: 'XML'), description: 'Imported DB Schema'},
+                   {snippet: IO.binread(Rails.root.to_s + '/db/snippet_samples/wzorzec.c').to_s, lang: Lang.find_by(name: 'C'), description: 'Algorytm wyszukiwania wzorca w tekscie'}
                ]);
 
 #langs.each do |attr|
