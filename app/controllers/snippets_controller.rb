@@ -4,7 +4,16 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.paginate(page: params[:page], per_page: 5).order('created_at DESC')
+    # Simple page validation
+    if !page_check(params[:page])
+      return false
+    end
+
+    if params[:page].nil? || params[:page].blank?
+      params[:page] = 1
+    end
+
+    @snippets = Snippet.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     respond_to do |format|
       format.html
       format.js
@@ -87,6 +96,15 @@ class SnippetsController < ApplicationController
     def lang_check(snippet)
       if !snippet.lang_id.nil? && !snippet.lang_id.blank? && !Lang.all.include?(snippet.lang)
         redirect_to(snippets_path, alert: 'Trying to crash things won\'t lead you anywhere! =)') # flash[:alert]
+        return false
+      end
+      return true
+    end
+
+    # Pagination check
+    def page_check(page)
+      if !params[:page].nil? && !params[:page].blank? && params[:page].to_i < 1
+        redirect_to(snippets_path)
         return false
       end
       return true

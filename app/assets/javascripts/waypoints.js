@@ -382,7 +382,7 @@
             continuous: true,
             enabled: true,
             horizontal: false,
-            offset: 0,
+            offset: 600,
             triggerOnce: false
         };
         jQMethods = {

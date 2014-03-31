@@ -3,6 +3,4 @@ class Snippet < ActiveRecord::Base
 
   validates :snippet, :lang_id, presence: true, allow_nil: false
   validates_length_of :description, maximum: 100
-
-  self.per_page = 5
 end

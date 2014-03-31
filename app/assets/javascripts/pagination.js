@@ -38,6 +38,6 @@ jQuery(function() {
                     return pushPage(more_snippets_url.match(page_regexp)[0]);
                 });
             }
-        }, 100);
+        }, 200);
     }
 });

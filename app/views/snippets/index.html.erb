@@ -18,17 +18,16 @@
     <thead>
       <tr>
         <th class="snippet-header">Snippet</th>
-        <th>Lang</th>
-        <th>Description</th>
-        <th>Last modification</th>
+        <th class="lang-header">Lang</th>
+        <th class="desc-header">Description</th>
+        <th class="date-header">Last modification</th>
         <th class="button-header"></th>
         <th class="button-header"></th>
       </tr>
     </thead>
 
     <tbody id="snippets">
-        <div class="page-delimiter first-page" data-page="<%= params[:page] || 1 %>"></div>
-        <% render @snippets %>
+    <!-- Snippets go here -->
     </tbody>
   </table>
 </div>
@@ -39,33 +38,12 @@
     </div>
 <% end %>
 
-<%= javascript_tag do %>
-    $(document).ready(function() {
-        // Make rows clickable
-        $(".table tr").on('click', function(event) {
-            var target = $(event.target);
-            if (target.is(":not(a)") && target.is(":not(span)")) {
-                var href = $(this).data("link");
-                if (href) {
-                    window.location.href = href;
-                }
-            }
-        });
-    });
-<% end %>
-
 <% else %>
     <em>No snippets found.</em>
 <% end %>
 
 <%= javascript_tag do %>
-    var delimiter = $('<div class="page-delimiter" data-page="<%= params[:page] %>"></div>');
+    var delimiter = $('<div class="page-delimiter first-page" data-page="<%= params[:page] %>"></div>');
     $('#snippets').append(delimiter);
     $('#snippets').append('<%= j render @snippets %>');
-    $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
-    preparePagination(delimiter);
-
-    <% unless @snippets.next_page %>
-        $('#infinite-scrolling .pagination').remove();
-    <% end %>
 <% end %>
