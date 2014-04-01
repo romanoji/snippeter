@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'about#index'
 
+  get 'snippets/search' => 'snippets#search'
+
   resources :snippets
 
   # The priority is based upon order of creation: first created -> highest priority.

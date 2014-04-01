@@ -1,5 +1,13 @@
 <% title 'Recent snippets' %>
 
+<!-- TODO: REF => snippets#index -->
+<% if @snippets_count_texts %>
+    <div class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      Found <%= @snippets_count_texts %>.
+    </div>
+<% end %>
+
 <div class="page-header">
   <%= link_to new_snippet_path, :class => 'btn btn-add' do %>
     <span class="glyphicon glyphicon-plus"></span>

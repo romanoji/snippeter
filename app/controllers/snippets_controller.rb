@@ -13,11 +13,26 @@ class SnippetsController < ApplicationController
       params[:page] = 1
     end
 
-    @snippets = Snippet.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    @snippets = apply_scopes(Snippet).paginate(page: params[:page], per_page: 10).order('created_at DESC')
+
+    # TODO: move it to other `method` and implement `button` that pass get params to `snippets#index`
+    if !params['snippet'].nil?
+      @snippets_count_texts = @snippets.count.to_s + ' ' + 'snippet'.pluralize(@snippets.count)
+    end
+
     respond_to do |format|
       format.html
       format.js
     end
+  end
+
+  # GET /snippets/search
+  def search
+    @filter_button_text = 'Filters'
+  end
+
+  def filter_by
+    # TODO: implement later
   end
 
   # GET /snippets/1
