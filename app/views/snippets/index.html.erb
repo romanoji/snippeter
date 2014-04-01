@@ -27,7 +27,8 @@
     </thead>
 
     <tbody id="snippets">
-    <!-- Snippets go here -->
+        <%= render @snippets %>
+        <!-- Snippets go here -->
     </tbody>
   </table>
 </div>
@@ -40,10 +41,4 @@
 
 <% else %>
     <em>No snippets found.</em>
-<% end %>
-
-<%= javascript_tag do %>
-    var delimiter = $('<div class="page-delimiter first-page" data-page="<%= params[:page] %>"></div>');
-    $('#snippets').append(delimiter);
-    $('#snippets').append('<%= j render @snippets %>');
 <% end %>
