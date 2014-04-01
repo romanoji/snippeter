@@ -45,7 +45,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  #gem 'spring'
+  gem 'spring'
   # Quiet assets
   gem 'quiet_assets'
 end
@@ -54,8 +54,8 @@ end
 gem 'sqlite3', '1.3.9', group: [:development, :test]
 
 group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'pg', '0.17.1'
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password
