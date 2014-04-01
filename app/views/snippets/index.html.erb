@@ -43,9 +43,7 @@
 <% end %>
 
 <%= javascript_tag do %>
-    $(document).ready(function() {
-        var delimiter = $('<div class="page-delimiter first-page" data-page="<%= params[:page] %>"></div>');
-        $('#snippets').append(delimiter);
-        $('#snippets').append('<%= j render @snippets %>');
-    });
+    var delimiter = $('<div class="page-delimiter first-page" data-page="<%= params[:page] %>"></div>');
+    $('#snippets').append(delimiter);
+    $('#snippets').append('<%= j render @snippets %>');
 <% end %>
