@@ -24,8 +24,6 @@ gem 'animate-scss' # gem 'animate-rails'
 # Paginator
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-# Infinite scrolling
-# gem 'infinitescrolling-rails'
 # Useful for crypting passwords
 # gem 'bcrypt' #gem 'bcrypt-ruby', :require => 'bcrypt'
 # Filter scopes
