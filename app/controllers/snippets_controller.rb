@@ -1,4 +1,6 @@
 class SnippetsController < ApplicationController
+  include Snippet::SearchScope
+  
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
 
   # GET /snippets
