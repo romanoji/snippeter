@@ -49,6 +49,10 @@ Application for training purposes.
 
 * <i>Possibility to input TAB character</i> in snippet form
 
+* <i>Pagination with infinite scrolling</i>
+
+* <i>Simple search engine</i>
+
 * <i>Secured combobox</i>
 
 * <i>Form validation</i>
@@ -61,11 +65,9 @@ Application for training purposes.
 
 ==== FUTURE?
 
-* Searching snippets using filters
-
 * Combobox optgroups
 
-* Snippet tooltip popup/dropdown
+* Snippet tooltip popup/dropdown ??
 
 * Login system
 
