@@ -55,11 +55,11 @@ Application for training purposes.
 
 * <i>Secured combobox</i>
 
+* <i>Responsive layout</i>
+
 * <i>Form validation</i>
 
 * <i>Dynamic page title</i>
-
-* <i>Fixed table layout with clipping snippet text</i>
 
 * <i>My buttons</i> :)
 
