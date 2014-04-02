@@ -33,6 +33,7 @@ class SnippetsController < ApplicationController
     @filter_button_text = 'Filters'
   end
 
+  # GET /snippets
   def filter_by
     # TODO: implement later
   end
