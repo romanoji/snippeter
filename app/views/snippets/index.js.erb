@@ -3,13 +3,14 @@ var delimiter = $('<div class="page-delimiter" data-page="<%= params[:page] %>">
 $('#snippets').append(delimiter);
 $('#snippets').append('<%= j render @snippets %>');
 $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
+$('#infinite-scrolling').find('.ajax-loader').remove();
 preparePagination(delimiter);
 
 <% unless @snippets.next_page %>
-    $('#infinite-scrolling .pagination').remove();
+    $('#infinite-scrolling').remove();
 <% end %>
 
-// Make rows clickable... again
+// Make rows clickable
 $(".table tr").on('click', function(event) {
     var target = $(event.target);
     if (target.is(":not(a)") && target.is(":not(span)")) {

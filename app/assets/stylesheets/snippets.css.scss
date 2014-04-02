@@ -287,4 +287,14 @@ pre, textarea {
 
 #infinite-scrolling {
   text-align: center;
+
+  height: 50px;
+
+  .ajax-loader {
+    width: 300px;
+  }
+}
+
+#infinite-scrolling .pagination {
+  display: none;
 }
