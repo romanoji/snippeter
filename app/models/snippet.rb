@@ -15,7 +15,7 @@ class Snippet < ActiveRecord::Base
   end
 
   scope :snippet, ->(snippet) { where('snippet LIKE ?', "%#{snippet}%") }
-  scope :lang_id, ->(lang_id) { where('lang_id LIKE ?', "%#{lang_id}%") }
+  scope :lang_id, ->(lang_id) { where('lang_id = ?', lang_id) }
   scope :description, ->(description) { where('description LIKE ?', "%#{description}%") }
   # scope :created_at, ->(created_at) { where('created_at LIKE ', "%#{created_at}%") }
   # scope :updated_at, ->(updated_at) { where('updated_at LIKE ', "%#{updated_at}%") }
