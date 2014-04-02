@@ -7,7 +7,7 @@ class SnippetsController < ApplicationController
   # GET /snippets.json
   def index
     # Simple page validation
-    if !page_check(params[:page])
+    unless page_check(params[:page])
       return false
     end
 
@@ -18,7 +18,7 @@ class SnippetsController < ApplicationController
     @snippets = apply_scopes(Snippet).paginate(page: params[:page], per_page: 10).order('created_at DESC')
 
     # TODO: move it to other `method` and implement `button` that pass get params to `snippets#index`
-    if !params['snippet'].nil?
+    unless params['snippet'].nil?
       @snippets_count_texts = @snippets.count.to_s + ' ' + 'snippet'.pluralize(@snippets.count)
     end
 
@@ -59,7 +59,7 @@ class SnippetsController < ApplicationController
   def create
     @snippet = Snippet.new(snippet_params)
 
-    if !lang_check(@snippet)
+    unless lang_check(@snippet)
       return false
     end
 
@@ -78,7 +78,7 @@ class SnippetsController < ApplicationController
   # PATCH/PUT /snippets/1
   # PATCH/PUT /snippets/1.json
   def update
-    if !lang_check(Snippet.new(snippet_params))
+    unless lang_check(Snippet.new(snippet_params))
       return false
     end
 
