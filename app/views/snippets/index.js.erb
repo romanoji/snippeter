@@ -8,6 +8,15 @@ preparePagination(delimiter);
 
 <% unless @snippets.next_page %>
     $('#infinite-scrolling').remove();
+
+    if ($('#snippets-table').find('#no-more').length == 0) {
+        $('#snippets-table').append('<div id="no-more" style="display: none; height: 50px; text-align: center;">No more snippets found.</div>');
+    }
+
+    $('#snippets-table').find('#no-more').fadeIn(2500);
+    $('#snippets-table').find('#no-more').fadeOut(2500, function() {
+        $(this).remove();
+    });
 <% end %>
 
 // Make rows clickable
