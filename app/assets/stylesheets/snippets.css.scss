@@ -169,14 +169,25 @@ dd {
 }
 
 pre {
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 pre, textarea {
   font-family: verdana, sans-serif;
 }
 
-.snippet-header, .snippet-notion {
+.snippet-showcase {
+  display: table-row;
+}
+
+.snippet-notion {
+  word-break: break-all !important;
+  word-wrap: break-word !important;
+  width: 500px;
+  max-width: 500px;
+}
+
+.toggle-header, .toggle-notion, .snippet-showcase {
   @media (max-width: 767px) {
     display: none;
   }
@@ -197,17 +208,20 @@ pre, textarea {
   width: 100px;
   max-width: 100px;
 
+  @media (max-width: 991px) {
+    width: 60px;
+  }
+
   @media (max-width: 767px) {
     width: 50px;
   }
 }
 
-.snippet-notion {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 250px;
-  max-width: 250px;
+.toggle-notion {
+  text-align: center;
+  font-size: 18pt;
+  width: 50px;
+  max-width: 50px;
 }
 
 #static-pagination {
