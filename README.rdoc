@@ -57,6 +57,8 @@ Application for training purposes.
 
 * <i>Responsive layout</i>
 
+* <i>Toggle snippet preview with smooth scrolling</i>
+
 * <i>Form validation</i>
 
 * <i>Dynamic page title</i>
