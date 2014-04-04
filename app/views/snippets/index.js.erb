@@ -9,6 +9,7 @@ if (!isLoading) {
     $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
     $('#infinite-scrolling').find('.ajax-loader').remove();
     preparePagination(delimiter);
+    isLoading = false;
 }
 
 <% unless @snippets.next_page %>
