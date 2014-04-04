@@ -11,8 +11,6 @@ if (!isLoading) {
     preparePagination(delimiter);
 }
 
-var isLoading = false;
-
 <% unless @snippets.next_page %>
     $('#infinite-scrolling').remove();
 
