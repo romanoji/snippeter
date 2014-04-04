@@ -1,5 +1,5 @@
 jQuery(function() {
-    var hash, isLoading, page_regexp, pushPage;
+    var hash, isLoading = false, page_regexp, pushPage;
     page_regexp = /\d+$/;
     pushPage = function(page) {
         History.pushState(null, "Snippeter App | Page " + page, "?page=" + page);
@@ -30,7 +30,6 @@ jQuery(function() {
     if ($('#infinite-scrolling').size() > 0) {
         preparePagination($('.page-delimiter'));
 
-        isLoading = false;
         $(window).bindWithDelay('scroll', function() {
             if (!isLoading) {
                 isLoading = true;
