@@ -1,5 +1,5 @@
 jQuery(function() {
-    var hash, isLoading = false, page_regexp, pushPage;
+    var hash, page_regexp, pushPage;
     page_regexp = /\d+$/;
     pushPage = function(page) {
         History.pushState(null, "Snippeter App | Page " + page, "?page=" + page);
@@ -42,8 +42,6 @@ jQuery(function() {
                         return pushPage(more_snippets_url.match(page_regexp)[0]);
                     });
                 }
-
-                isLoading = false;
             }
         }, 200);
     }
