@@ -10,8 +10,8 @@ var ready = function() {
         }
     });
 
-    // Change button icon
     $('.toggle-notion').find('.collapser').on('click', function(el) {
+        // Change button icon
         if ($(this).hasClass('collapsed')) {
             $(this).find('.glyphicon-circle-arrow-up').first()
                 .removeClass('glyphicon-circle-arrow-up')
@@ -21,6 +21,13 @@ var ready = function() {
                 .removeClass('glyphicon-circle-arrow-down')
                 .addClass('glyphicon-circle-arrow-up');
         }
+
+        var snippetRow = $(this).parent().parent();
+
+        // Smooth scrolling
+        $('html, body').animate({
+            scrollTop: $(snippetRow).position().top - $(snippetRow).height()
+        }, 1000);
     });
 };
 
