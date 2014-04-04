@@ -22,12 +22,10 @@ class SnippetsController < ApplicationController
       @snippets_count_texts = @snippets.count.to_s + ' ' + 'snippet'.pluralize(@snippets.count)
     end
 
-    @isLoading = false
     respond_to do |format|
       format.html
       format.js
     end
-    @isLoading = false
   end
 
   # GET /snippets/search

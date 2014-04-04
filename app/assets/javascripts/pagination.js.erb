@@ -1,5 +1,5 @@
 jQuery(function() {
-    var hash, loading_snippets, page_regexp, pushPage;
+    var hash, isLoading, page_regexp, pushPage;
     page_regexp = /\d+$/;
     pushPage = function(page) {
         History.pushState(null, "Snippeter App | Page " + page, "?page=" + page);
@@ -29,14 +29,22 @@ jQuery(function() {
     }
     if ($('#infinite-scrolling').size() > 0) {
         preparePagination($('.page-delimiter'));
+
+        isLoading = false;
         $(window).bindWithDelay('scroll', function() {
-            var more_snippets_url;
-            more_snippets_url = $('#infinite-scrolling .next_page a').attr('href');
-            if (more_snippets_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
-                $('#infinite-scrolling').append('<img class="ajax-loader" src="<%= asset_path 'ajax-loader.gif' %>" alt="Loading..." title="Loading..." />');
-                $.getScript(more_snippets_url, function() {
-                    return pushPage(more_snippets_url.match(page_regexp)[0]);
-                });
+            if (!isLoading) {
+                isLoading = true;
+
+                var more_snippets_url;
+                more_snippets_url = $('#infinite-scrolling .next_page a').attr('href');
+                if (more_snippets_url && $(window).scrollTop() > $(document).height() - $(window).height() - 60) {
+                    $('#infinite-scrolling').append('<img class="ajax-loader" src="<%= asset_path 'ajax-loader.gif' %>" alt="Loading..." title="Loading..." />');
+                    $.getScript(more_snippets_url, function() {
+                        return pushPage(more_snippets_url.match(page_regexp)[0]);
+                    });
+                }
+
+                isLoading = false;
             }
         }, 200);
     }
