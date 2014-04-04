@@ -1,10 +1,14 @@
 // Load page contents (by infinite scroll)
-var delimiter = $('<div class="page-delimiter" data-page="<%= params[:page] %>"></div>');
-$('#snippets').append(delimiter);
-$('#snippets').append('<%= j render @snippets %>');
-$('.pagination').replaceWith('<%= j will_paginate @snippets %>');
-$('#infinite-scrolling').find('.ajax-loader').remove();
-preparePagination(delimiter);
+var isLoading = typeof isLoading != 'undefined' && isLoading != false ? true : false;
+
+if (!isLoading) {
+    var delimiter = $('<div class="page-delimiter" data-page="<%= params[:page] %>"></div>');
+    $('#snippets').append(delimiter);
+    $('#snippets').append('<%= j render @snippets %>');
+    $('.pagination').replaceWith('<%= j will_paginate @snippets %>');
+    $('#infinite-scrolling').find('.ajax-loader').remove();
+    preparePagination(delimiter);
+}
 
 <% unless @snippets.next_page %>
     $('#infinite-scrolling').remove();
