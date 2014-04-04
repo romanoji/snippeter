@@ -193,6 +193,10 @@ pre, textarea {
   word-wrap: break-word;
   word-break: break-all;
 
+  @media (min-height: 901px) {
+    max-height: 750px;
+  }
+
   @media (max-height: 900px) {
     max-height: 700px;
   }
