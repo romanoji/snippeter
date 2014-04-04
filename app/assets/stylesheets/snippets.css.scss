@@ -187,6 +187,25 @@ pre, textarea {
   max-width: 500px;
 }
 
+.snippet-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  @media (max-height: 900px) {
+    max-height: 700px;
+  }
+
+  @media (max-height: 768px) {
+    max-height: 500px;
+  }
+
+  @media (max-height: 640px) {
+    max-height: 400px;
+  }
+}
+
 .toggle-header, .toggle-notion, .snippet-showcase {
   @media (max-width: 767px) {
     display: none;
