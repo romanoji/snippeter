@@ -57,7 +57,7 @@ Application for training purposes.
 
 * <i>Responsive layout</i>
 
-* <i>Toggle snippet preview with smooth scrolling</i>
+* <i>Snippet preview with smooth scrolling</i>
 
 * <i>Form validation</i>
 
@@ -69,8 +69,4 @@ Application for training purposes.
 
 * Combobox optgroups
 
-* Snippet tooltip popup/dropdown ??
-
 * Login system
-
-* ... ?
